@@ -10,9 +10,27 @@ function showNumberWithAnimation(i, j, randomNumber) {
     numberCell.text(randomNumber);
 
     numberCell.animate({
-        width: '100px',
-        height: '100px',
+        width: cellSlidLength,
+        height: cellSlidLength,
         top: getPosTop(i,j),
         left: getPosLeft(i,j)
     },50);
+}
+
+
+function showMoveAnimation(fromx, fromy, tox, toy ) {
+
+    console.log('from: '+ fromx +', '+ fromy );
+    console.log('to: ' + tox + ', ' + toy);
+
+    var numberCell = $('#number-cell-' + fromx + '-' + fromy );
+    numberCell.animate({
+        top: getPosTop(tox, toy),
+        left: getPosLeft(tox, toy)
+    },200);
+}
+
+function updateScore(score) {
+
+    $('#score').text(score);
 }
