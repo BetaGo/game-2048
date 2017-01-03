@@ -10,6 +10,9 @@ var statrx,starty,endx,endy;
 $(document).ready(function () {
     prepareForMobile();
     newGame();
+    document.querySelector('body').addEventListener('touchstart', function (ev) {
+	ev.preventDefault();
+});
 
 });
 
